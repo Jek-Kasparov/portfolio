@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умови & Навички — Євгеній Каспаров</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0d0f14;
+            --surface-color: #1a1d24;
+            --primary-color: #6aa6ff;
+            --text-main: #ffffff;
+            --text-muted: #9aa0a6;
+            --border-color: #2a2d35;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+        }
+
+        .content-container {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px 50px;
+            width: 100%;
+            max-width: 750px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: var(--primary-color);
+        }
+
+        h1 {
+            margin: 0 0 30px 0;
+            font-size: 24px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .summary-block {
+            margin-bottom: 25px;
+        }
+
+        .summary-block h3 {
+            color: var(--primary-color);
+            font-size: 16px;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .summary-block p, .summary-block ul {
+            margin: 0;
+            font-size: 14.5px;
+            color: var(--text-main);
+        }
+
+        .summary-block ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .summary-block li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: rgba(106, 166, 255, 0.05);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 30px;
+        }
+
+        .highlight-box h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .highlight-box ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 14.5px;
+        }
+
+        .highlight-box li {
+            margin-bottom: 12px;
+        }
+        
+        .highlight-box li:last-child {
+            margin-bottom: 0;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @media (max-width: 600px) {
+            .content-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-container">
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Назад на головну
+        </a>
+
+        <h1>Коротко про мій статус та умови</h1>
+
+        <div class="summary-block">
+            <h3><i class="fa-solid fa-user-gear"></i> Цільова спеціалізація</h3>
+            <p>Шукаю роботу з фокусом на <b>IT Support / Hardware Engineering</b>. Моя мета — налаштування, оптимізація та апаратний ремонт ПК і ноутбуків, підтримка користувачів та робота з мережевим обладнанням.</p>
+        </div>
+
+        <div class="summary-block">
+            <h3><i class="fa-solid fa-shield-halved"></i> Військовий облік</h3>
+            <p>Студент денної форми навчання. <b>Офіційна бронь до січня 2027 року.</b> Шукаю підприємство, яке надає можливість бронювання працівників.</p>
+        </div>
+
+        <div class="summary-block">
+            <h3><i class="fa-solid fa-id-card"></i> Особисті дані та локація</h3>
+            <ul>
+                <li><b>Вік:</b> 25 років.</li>
+                <li><b>Базування:</b> Проживаю у Фастівському районі (с. Кожухівка, біля ст. Васильків-1).</li>
+                <li><b>Пріоритет:</b> Робота в Боярці, Глевасі, Василькові або гібридний формат.</li>
+                <li><b>Київ:</b> Залежить від графіка, або готовий до переїзду, якщо компанія пропонує відповідний рівень ЗП чи допомагає з наданням житла.</li>
+                <li><b>Транспорт:</b> Маю водійські права (категорія В) та власний автомобіль для локальних робочих завдань.</li>
+            </ul>
+        </div>
+
+        <div class="summary-block">
+            <h3><i class="fa-solid fa-language"></i> Володіння мовами</h3>
+            <p>Українська (вільно), Англійська (базова технічна, навчався у спецшколі з поглибленим вивченням), Російська (вільно).</p>
+        </div>
+
+        <div class="highlight-box">
+            <h3><i class="fa-solid fa-briefcase"></i> Ключова цінність для бізнесу</h3>
+            <ul>
+                <li><b>Експертиза в Hardware & IT Support:</b> Закриваю весь цикл роботи з комп'ютерним залізом — діагностика, налаштування робочих місць, ремонт і масштабний апгрейд ПК та ноутбуків.</li>
+                <li><b>Мережі та Софт:</b> Оптимізація ОС, конфігурація та перепрошивка роутерів (зокрема кастомними прошивками OpenWRT), підключення периферії.</li>
+                <li><b>AI-Assisted Troubleshooting:</b> Активно використовую нейромережі та ШІ-інструменти для прискорення діагностики збоїв та аналізу логів.</li>
+                <li><b>Інженерний бекграунд:</b> Маю практичний досвід роботи з інфраструктурою (електрика, обслуговування вентиляції, заміна батарей в UPS), що дає мені фундаментальне розуміння апаратної частини об'єктів. Вмію паяти мікроелектроніку.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

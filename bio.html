@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автобіографія — Євгеній Каспаров</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0d0f14;
+            --surface-color: #1a1d24;
+            --primary-color: #6aa6ff;
+            --text-main: #e6e6e6;
+            --text-muted: #9aa0a6;
+            --border-color: #2a2d35;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            line-height: 1.8;
+        }
+
+        .content-container {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 50px 60px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: var(--primary-color);
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 35px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 15.5px;
+            color: #c9cbd1;
+            text-align: justify;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-text {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .quote-block {
+            border-left: 3px solid var(--primary-color);
+            padding: 15px 0 15px 25px;
+            margin: 35px 0;
+            background: linear-gradient(90deg, rgba(106, 166, 255, 0.05) 0%, rgba(26, 29, 36, 0) 100%);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote-block p {
+            font-style: italic;
+            font-size: 16.5px;
+            color: #ffffff;
+            margin: 0;
+            text-align: left;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .content-container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-container">
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Назад на головну
+        </a>
+
+        <h1>Мій шлях у технологіях</h1>
+        <div class="subtitle">Від оптимізації заліза до підтримки інфраструктури</div>
+
+        <p>Мій інженерний інтерес почався не з ідеальних лабораторних умов, а з необхідності витиснути максимум із того, що було під рукою. Ще в школі я експериментував з <span class="highlight-text">оптимізацією Windows та міграцією на Ubuntu</span>, щоб змусити слабке залізо працювати на межі можливостей. Свій перший бюджет на комп'ютерні апгрейди я формував самостійно, купуючи, відновлюючи та продаючи комплектуючі на OLX.</p>
+
+        <p>Під час навчання в коледжі КЕМК на системного адміністратора я вивчав мережеві технології, роботу з Arduino та 3D AutoCAD. Але справжню базу я здобув на практиці: працюючи в сервісному центрі «Без проблем», де займався <span class="highlight-text">компонентним ремонтом та пайкою ПК, ноутбуків і портативної електроніки</span>.</p>
+
+        <div class="quote-block">
+            <p>«Моя кар'єрна мета — комплексна підтримка ІТ-інфраструктури та Hardware. Я однаково ефективно почуваюся як при налаштуванні мереж і ОС, так і з паяльником у руках під час мікроремонту плат.»</p>
+        </div>
+
+        <p>Сьогодні я працюю інженером з експлуатації електричних станцій та мереж. Мої щоденні обов'язки охоплюють апаратну та електричну інфраструктуру: заміна автоматів і розеток, обслуговування вентиляційних систем, планова заміна батарей в UPS, а також діагностика та налаштування робочих місць. Цей досвід дав мені фундаментальне розуміння того, як працює живлення об'єктів на базовому рівні, але я розглядаю його лише як міцний фундамент для своєї IT-кар'єри.</p>
+
+        <p>Свою справжню інженерну пристрасть я реалізую у вільний від роботи час. Я <span class="highlight-text">переробляю звичайні UPS у повноцінні інвертори</span> для забезпечення автономності під час блекаутів, ремонтую автомобілі, проєктую та створюю на 3D-принтері кастомні деталі. Також я постійно працюю з мережами, конфігуруючи роутери (OpenWRT), прошиваю Android-пристрої, і заглиблююсь в ігрові рушії (Source, розробка модифікацій для S.T.A.L.K.E.R. та Minecraft).</p>
+
+        <p>Окремо виділю роботу зі штучним інтелектом: <span class="highlight-text">я професійно використовую ШІ-інструменти (Prompt Engineering)</span> для дебагу, глибокого аналізу логів та пришвидшення пошуку нестандартних рішень. Я знаю свої сильні сторони і готовий швидко заповнити будь-які прогалини в знаннях, якщо цього вимагатиме нова посада чи нестандартне обладнання.</p>
+
+    </div>
+
+</body>
+</html>
