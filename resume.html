@@ -3,103 +3,358 @@
 <head>
 <meta charset="UTF-8">
 <title>Євгеній Каспаров — Resume</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body { margin: 0; background: #e0e0e0; font-family: 'Inter', sans-serif; color: #111111; }
-.page { width: 210mm; min-height: 297mm; margin: 30px auto; padding: 12mm 15mm; background: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.3); box-sizing: border-box; }
-.header { display: flex; justify-content: space-between; border-bottom: 2px solid #2b5797; padding-bottom: 15px; margin-bottom: 20px; }
-.name { font-size: 32px; font-weight: 700; }
-.title { color: #2b5797; font-weight: 600; font-size: 12px; letter-spacing: 1px; margin-top: 5px; }
-.contact { margin-top: 10px; font-size: 12px; }
-.photo-container { width: 120px; height: 120px; border-radius: 8px; border: 2px solid #2b5797; overflow: hidden; }
-.photo-container img { width: 100%; height: 100%; object-fit: cover; }
-.layout { display: flex; gap: 30px; }
-.left { width: 30%; border-right: 1px solid #ddd; }
-.right { width: 70%; }
-.section h3 { font-size: 13px; color: #2b5797; border-bottom: 1px solid #2b5797; padding-bottom: 5px; margin-bottom: 10px; text-transform: uppercase; }
-.skills, ul { padding-left: 18px; font-size: 12px; }
-.job-title { font-weight: 700; font-size: 13px; margin-top: 10px; }
-.job-date { float: right; font-weight: 600; color: #555; }
-.company { font-style: italic; font-size: 12px; margin-bottom: 5px; }
-.footer { margin-top: 40px; text-align: center; font-size: 12px; border-top: 1px solid #ddd; padding-top: 10px; }
-.footer a { color: #2b5797; font-weight: 700; text-decoration: none; }
+/* =======================================================
+   ЄДИНИЙ ДИЗАЙН (Виглядає на екрані точно як у PDF)
+   ======================================================= */
+body {
+    margin: 0;
+    background: #1a1c23; 
+    font-family: 'Inter', sans-serif;
+    color: #111111;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+.page {
+    width: 210mm;
+    height: 297mm; /* Жорстко фіксуємо висоту А4 */
+    margin: 30px auto;
+    /* Зменшили відступи зверху і знизу, щоб все влізло */
+    padding: 10mm 15mm; 
+    box-sizing: border-box;
+    background: #ffffff; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #dddddd;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.header-left {
+    max-width: 75%;
+}
+
+.name {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 0.5px;
+}
+
+.title {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #2b5797;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.contact {
+    margin-top: 16px;
+    font-size: 13.5px;
+    color: #222222;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact i {
+    margin-right: 8px;
+    color: #2b5797;
+}
+
+.photo-container {
+    width: 125px;
+    height: 125px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: transparent;
+    border: 2px solid #2b5797;
+    flex-shrink: 0;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.layout {
+    display: flex;
+    gap: 25px;
+    flex-grow: 1;
+}
+
+.left {
+    width: 34%;
+    border-right: 1px solid #dddddd;
+    padding-right: 25px;
+}
+
+.right {
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section {
+    margin-bottom: 22px;
+}
+
+.section h3 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #2b5797;
+    border-bottom: 2px solid #2b5797;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.skills {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills li {
+    margin-bottom: 10px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #222222;
+}
+
+.job {
+    margin-bottom: 18px;
+}
+
+.job-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+}
+
+.job-date {
+    float: right;
+    color: #555555;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.company {
+    color: #555555;
+    font-size: 13.5px;
+    margin-bottom: 6px;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+ul {
+    padding-left: 20px;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #222222;
+}
+
+p {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #222222;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: left; 
+}
+
+/* Оформлення блоку посилання на портфоліо */
+.portfolio-print {
+    background: #f4f6f8;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    border-left: 4px solid #2b5797;
+    padding: 12px 15px;
+    margin-top: 10px; /* Прибрали відрив, тепер блок йде одразу за текстом */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.port-icon {
+    font-size: 24px;
+    color: #2b5797;
+}
+
+.port-text strong {
+    color: #222222;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.short-link {
+    color: #2b5797;
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    text-decoration: underline;
+}
+
+/* =======================================================
+   ФІКСАЦІЯ ДЛЯ ПРИНТЕРА
+   ======================================================= */
+@media print {
+    @page { 
+        size: A4 portrait;
+        margin: 0; 
+    } 
+    
+    body {
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        overflow: hidden !important; 
+    }
+
+    a[href]:after { content: none !important; }
+}
 </style>
 </head>
+
 <body>
 
 <div class="page">
+
     <div class="header">
-        <div>
+        <div class="header-left">
             <div class="name">Євгеній Каспаров</div>
             <div class="title">SYSTEM ADMINISTRATOR / IT SUPPORT ENGINEER</div>
             <div class="contact">
-                <i class="fa-solid fa-phone"></i> +380 93 849 77 90 | 
-                <i class="fa-solid fa-envelope"></i> jek.kasparov3@gmail.com | 
-                <i class="fa-brands fa-telegram"></i> @Evgenii_414
+                <div><i class="fa-solid fa-phone"></i> +380 93 849 77 90</div>
+                <div><i class="fa-solid fa-envelope"></i> jek.kasparov3@gmail.com</div>
+                <div><i class="fa-brands fa-telegram"></i> @Evgenii_414</div>
             </div>
         </div>
+
         <div class="photo-container">
             <img src="https://i.postimg.cc/YCPCyxsC/photo.png" alt="Євгеній Каспаров">
         </div>
     </div>
 
     <div class="layout">
+        <!-- ЛІВА КОЛОНКА -->
         <div class="left">
             <div class="section">
                 <h3>ОСВІТА</h3>
-                <p style="font-size: 12px;">ДУІКТ<br>Бакалавр</p>
+                <p>
+                Державний університет інформаційно-комунікаційних технологій (ДУІКТ)<br>
+                • <b>Бакалавр</b> (закінчив)<br>
+                • <b>Магістратура</b> (до 2027 року)
+                </p>
             </div>
+            
+            <div class="section">
+                <h3>МОВИ</h3>
+                <ul class="skills">
+                    <li><b>Англійська:</b> базова технічна</li>
+                    <li><b>Українська:</b> вільне володіння</li>
+                </ul>
+            </div>
+
             <div class="section">
                 <h3>КЛЮЧОВІ НАВИЧКИ</h3>
                 <ul class="skills">
-                    <li>IT Hardware & Repair: збірка, апгрейд, ремонт.</li>
-                    <li>Windows / Linux: адміністрування.</li>
-                    <li>Networking: MikroTik, OpenWRT.</li>
-                    <li>Android Firmware: ADB, Fastboot.</li>
-                    <li>3D-моделювання та друк.</li>
-                    <li>Пайка мікроелектроніки.</li>
-                </ul>
-            </div>
-            <div class="section">
-                <h3>СЕРТИФІКАТИ ТА ДОПУСКИ</h3>
-                <ul class="skills">
-                    <li>2 група електробезпеки (ПУЕ).</li>
-                    <li>Професійні допуски та ліцензії: <a href="https://bit.ly/Kasparov404" style="color:#2b5797;">bit.ly/Kasparov404</a></li>
+                    <li><b>IT Hardware:</b> збірка ПК, ремонт, 3D-друк деталей, стрес-тести (Furmark).</li>
+                    <li><b>Діагностика:</b> WinPE, Victoria, CrystalDisk, AIDA64, Rufus.</li>
+                    <li><b>Software & OS:</b> Встановлення ОС, VirtualBox, підтримка MS Office, AutoCAD.</li>
+                    <li><b>Remote & Комунікації:</b> RDP, AnyDesk, корпоративний зв'язок (Zoom, Google Meet).</li>
+                    <li><b>Networking:</b> MikroTik, TP-Link, Keenetic, OpenWRT, LAN-монтаж, Advanced IP Scanner.</li>
+                    <li><b>AI Tools:</b> Prompt Engineering, дебаг та аналіз логів.</li>
+                    <li><b>Power Systems:</b> UPS, інвертори, генератори, знання ПУЕ (2 група).</li>
                 </ul>
             </div>
         </div>
 
+        <!-- ПРАВА КОЛОНКА -->
         <div class="right">
             <div class="section">
                 <h3>ПРО МЕНЕ</h3>
-                <p style="font-size: 13px; text-align: justify;">Універсальний інженер із практичним досвідом підтримки ІТ-інфраструктури. Поєдную навички системного адміністратора з глибоким розумінням «заліза», пайкою електроніки та налаштуванням мереж. Здатен автономно забезпечувати стабільну роботу робочих місць та мережевого обладнання.</p>
+                <p>
+                Універсальний інженер із практичним досвідом підтримки ІТ-інфраструктури. Поєдную навички системного адміністратора з глибоким розумінням «заліза», пайкою електроніки та налаштуванням мереж. Здатен автономно забезпечувати стабільну роботу робочих місць та мережевого обладнання.
+                </p>
             </div>
+
             <div class="section">
                 <h3>ДОСВІД РОБОТИ</h3>
-                <div class="job-title">Інженер з експлуатації / Торговий центр</div>
-                <div class="company">2023 — тепер</div>
-                <ul>
-                    <li>Техпідтримка ПК, ноутбуків, оргтехніки.</li>
-                    <li>Обслуговування мережі, Wi-Fi та систем живлення (UPS).</li>
-                    <li>Діагностика мережевих та апаратних збоїв.</li>
-                </ul>
-                
-                <div class="job-title">IT Support & Hardware Engineer (Фріланс)</div>
-                <div class="company">2021 — тепер</div>
-                <ul>
-                    <li>Апаратний ремонт (пайка, заміна компонентів), оптимізація ПК/ноутбуків.</li>
-                    <li>Налаштування роутерів, прошивка Android, відновлення систем.</li>
-                    <li>3D-друк запчастин та кріплень для оргтехніки/авто.</li>
-                    <li>Аналіз логів та конфігурація ігрових серверів.</li>
-                </ul>
+
+                <div class="job">
+                    <div class="job-title">
+                        Інженер з експлуатації станцій та мереж
+                        <span class="job-date">2023 — тепер</span>
+                    </div>
+                    <div class="company">Торговий центр, Київ</div>
+                    <ul>
+                        <li>Техпідтримка ПК, ноутбуків, оргтехніки та спеціалізованого ПЗ.</li>
+                        <li>Налаштування мережевого обладнання, систем зв'язку та Wi-Fi.</li>
+                        <li>Діагностика програмних, апаратних і мережевих проблем.</li>
+                        <li>Обслуговування електроінфраструктури та систем живлення (UPS).</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">
+                        IT Support & Hardware Engineer (Фріланс)
+                        <span class="job-date">2021 — тепер</span>
+                    </div>
+                    <ul>
+                        <li><b>IT Support:</b> Віддалена/виїзна підтримка, ізоляція та тестування ПЗ у VirtualBox.</li>
+                        <li><b>Hardware:</b> Апаратний ремонт (пайка, матриці), глибоке тестування компонентів.</li>
+                        <li><b>Мережі та ПЗ:</b> Налаштування роутерів, прошивка Android, відновлення ОС.</li>
+                        <li><b>Інше:</b> 3D-друк кріплень та запчастин, адміністрування ігрових серверів.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- БЛОК: ПОСИЛАННЯ НА САЙТ -->
+            <div class="portfolio-print">
+                <div class="port-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <div class="port-text">
+                    <strong>Детальна автобіографія, умови та сертифікати доступні на сайті:</strong>
+                    <a href="https://jek-kasparov.github.io/portfolio/" class="short-link" target="_blank">jek-kasparov.github.io/portfolio/</a>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="footer">
-        Портфоліо та проєкти: <a href="https://github.com/Jek-Kasparov/portfolio/" target="_blank">github.com/Jek-Kasparov/portfolio/</a>
     </div>
 </div>
 
