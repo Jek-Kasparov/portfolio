@@ -37,6 +37,7 @@
             max-width: 800px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             animation: fadeIn 0.6s ease-out;
+            position: relative;
         }
 
         .back-btn {
@@ -105,6 +106,84 @@
             text-align: left;
         }
 
+        /* Стилі для секретної кнопки */
+        .easter-egg-btn {
+            text-align: center;
+            font-size: 11px;
+            color: #2a2d35; /* Дуже тьмяний колір, майже зливається з фоном */
+            margin-top: 50px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            user-select: none;
+        }
+
+        .easter-egg-btn:hover {
+            color: var(--primary-color);
+        }
+
+        /* Стилі для модального вікна (попапу) */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            background: var(--surface-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 40px rgba(106, 166, 255, 0.2);
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .modal-content h3 {
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .modal-content p {
+            font-size: 14.5px;
+            color: #c9cbd1;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .modal-close {
+            background: var(--primary-color);
+            color: #0d0f14;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: #ffffff;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
@@ -144,7 +223,49 @@
 
         <p>Окремо виділю роботу зі штучним інтелектом: <span class="highlight-text">я професійно використовую ШІ-інструменти (Prompt Engineering)</span> для дебагу, глибокого аналізу логів та пришвидшення пошуку нестандартних рішень. Я знаю свої сильні сторони і готовий швидко заповнити будь-які прогалини в знаннях, якщо цього вимагатиме нова посада чи нестандартне обладнання.</p>
 
+        <!-- СЕКРЕТНА КНОПКА -->
+        <div class="easter-egg-btn" onclick="openEasterEgg()">
+            я все прочитав і ви мене дуже зацікавили (натисни на мене)
+        </div>
+
     </div>
+
+    <!-- МОДАЛЬНЕ ВІКНО -->
+    <div class="modal-overlay" id="easterModal" onclick="closeEasterEgg(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <!-- ТУТ ПОСИЛАННЯ НА КАРТИНКУ/МЕМ. Заміни src на своє, якщо потрібно -->
+            <img src="https://disgustingmen.com/wp-content/uploads/2023/09/meme.png" alt="Handshake Meme">
+            
+            <h3>🤝 Дякую, що дочитали!</h3>
+            <p>Моя контактна інформація знаходиться в розділі резюме або на головній сторінці сайту. Буду радий обговорити співпрацю.</p>
+            
+            <button class="modal-close" onclick="closeEasterEgg(event)">Закрити</button>
+        </div>
+    </div>
+
+    <!-- СКРИПТ ДЛЯ АНІМАЦІЇ -->
+    <script>
+        function openEasterEgg() {
+            const modal = document.getElementById('easterModal');
+            modal.style.display = 'flex';
+            // Невелика затримка для плавного CSS-переходу
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                modal.querySelector('.modal-content').style.transform = 'scale(1)';
+            }, 10);
+        }
+
+        function closeEasterEgg(event) {
+            if(event) event.preventDefault();
+            const modal = document.getElementById('easterModal');
+            modal.style.opacity = '0';
+            modal.querySelector('.modal-content').style.transform = 'scale(0.9)';
+            
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+    </script>
 
 </body>
 </html>
